@@ -1,6 +1,7 @@
 const bubbleSort = require('../sort/bubbleSort');
 const insertSort = require('../sort/insertSort');
 const mergeExecute = require('../sort/mergeSort');
+const QuickSortExecute = require('../sort/quickSort');
 const selectionSort = require('../sort/selectionSort');
 const testData = [
   {
@@ -59,4 +60,20 @@ test('합병정렬 테스트3', () => {
 });
 test('합병정렬 테스트4', () => {
   expect(mergeExecute([4, 3, 2, 1])).toEqual([1, 2, 3, 4]);
+});
+
+test('퀵정렬 테스트', () => {
+  expect(QuickSortExecute([4, 3, 2, 1])).toEqual([1, 2, 3, 4]);
+});
+test('퀵정렬 테스트', () => {
+  expect(QuickSortExecute([1, 3, 2, 4, 5])).toEqual([1, 2, 3, 4, 5]);
+});
+test('퀵정렬 테스트', () => {
+  expect(QuickSortExecute([5, 3, 1, 5, 3, 22])).toEqual([1, 3, 3, 5, 5, 22]);
+});
+
+test('퀵정렬 테스트', () => {
+  expect(QuickSortExecute([5, 3, 100, 1, 5, 99, 3, 22])).toEqual([
+    1, 3, 3, 5, 5, 22, 99, 100,
+  ]);
 });
