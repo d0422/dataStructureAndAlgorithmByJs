@@ -10,10 +10,11 @@ class BinaryTree {
     else {
       let currentNode = this.root;
       while (currentNode.left != null && currentNode.right != null) {
-        if (currentNode.value > value) {
+        while (currentNode.value > value && currentNode.left != null) {
           currentNode = currentNode.left;
-        } else {
-          currentNode.currentNode.right;
+        }
+        while (currentNode.value <= value && currentNode.right != null) {
+          currentNode = currentNode.right;
         }
       }
       if (currentNode.value < value) {
@@ -24,7 +25,7 @@ class BinaryTree {
     }
   }
   preOrder(currentNode) {
-    console.log(currentNode);
+    console.log(currentNode.value);
     if (currentNode.left) {
       this.preOrder(currentNode.left);
     }
