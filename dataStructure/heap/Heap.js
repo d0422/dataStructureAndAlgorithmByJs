@@ -2,6 +2,10 @@ class Heap {
   constructor() {
     this.heap = [];
   }
+  isEmpty() {
+    return this.heap.length === 0;
+  }
+
   swap(index1, index2) {
     [this.heap[index1], this.heap[index2]] = [
       this.heap[index2],
@@ -31,10 +35,4 @@ class Heap {
     return root;
   }
 }
-const heap = new Heap();
-[6, 2, 1, 4, 3].forEach((num) => {
-  heap.add(num);
-});
-while (heap.heap.length != 0) {
-  console.log(heap.pop());
-}
+module.exports = Heap;
