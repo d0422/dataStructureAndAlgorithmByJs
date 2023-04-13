@@ -5,6 +5,7 @@ const 합병정렬 = require('../sort/mergeSort');
 const 퀵정렬 = require('../sort/quickSort');
 const 선택정렬 = require('../sort/selectionSort');
 const 기수정렬 = require('../sort/radixSort');
+const 계수정렬 = require('../sort/countingSort');
 const testData = [
   {
     testInput: [5, 3, 1],
@@ -44,4 +45,9 @@ testFunction.forEach((func) => {
       expect(func(testData.testInput)).toEqual(testData.testAnswer);
     });
   });
+});
+test(`계수정렬 테스트`, () => {
+  expect(계수정렬([3, 3, 1, 1, 2, 2, 2, 7, 7, 7, 4, 4])).toEqual([
+    1, 1, 2, 2, 2, 3, 3, 4, 4, 7, 7, 7,
+  ]);
 });
