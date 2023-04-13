@@ -62,6 +62,14 @@ class BinaryTree {
     }
   }
 
-  postOrder(currentNode) {}
+  postOrder(currentNode) {
+    if (currentNode.right) {
+      this.postOrder(currentNode.right);
+    }
+    if (currentNode.left) {
+      this.postOrder(currentNode.left);
+    }
+    console.log(currentNode.value);
+  }
 }
 module.exports = BinaryTree;
