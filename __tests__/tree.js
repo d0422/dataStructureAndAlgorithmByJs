@@ -1,5 +1,5 @@
-const inOrder = require('../tree/inOrder');
-const preOrder = require('../tree/preOrder');
+const inOrder = require('../dataStructure/tree/inOrder');
+const preOrder = require('../dataStructure/tree/preOrder');
 
 test('전위순회 테스트', () => {
   const inputArray = [7, 5, 10, 2, 1, 3];
