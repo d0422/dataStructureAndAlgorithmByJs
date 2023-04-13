@@ -10,4 +10,8 @@ class Queue {
     this.queue = newQueue;
     return node;
   }
+  isEmpty() {
+    return this.queue.length === 0;
+  }
 }
+module.exports = Queue;
