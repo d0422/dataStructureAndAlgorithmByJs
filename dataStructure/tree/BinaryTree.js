@@ -24,6 +24,24 @@ class BinaryTree {
       }
     }
   }
+
+  delete(value) {
+    let currentNode = this.root;
+    while (currentNode.value != value) {
+      if (currentNode.left == null && currentNode.right == null) {
+        return null;
+      }
+      if (currentNode.value > value && currentNode.left != null) {
+        currentNode = currentNode.left;
+      }
+      if (currentNode.value < value && currentNode.right != null) {
+        currentNode = currentNode.right;
+      }
+      if (currentNode.value === value) {
+      }
+    }
+  }
+
   preOrder(currentNode) {
     console.log(currentNode.value);
     if (currentNode.left) {
