@@ -4,9 +4,11 @@ const 삽입정렬 = require('../sort/insertSort');
 const 합병정렬 = require('../sort/mergeSort');
 const 퀵정렬 = require('../sort/quickSort');
 const 선택정렬 = require('../sort/selectionSort');
+const 기수정렬 = require('../sort/radixSort');
 const testData = [
   {
     testInput: [5, 3, 1],
+
     testAnswer: [1, 3, 5],
   },
   {
@@ -27,7 +29,15 @@ const testData = [
   },
 ];
 
-const testFunction = [선택정렬, 삽입정렬, 버블정렬, 합병정렬, 퀵정렬, 힙정렬];
+const testFunction = [
+  선택정렬,
+  삽입정렬,
+  버블정렬,
+  합병정렬,
+  퀵정렬,
+  힙정렬,
+  기수정렬,
+];
 testFunction.forEach((func) => {
   testData.forEach((testData, index) => {
     test(`${func.name} 테스트 ${index}`, () => {
