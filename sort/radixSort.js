@@ -4,10 +4,13 @@ const radixSort = (inputValue) => {
   const digit = String(maxValue).split('').length;
   const zeroToNine = Array.from({ length: 10 }).map(() => new Queue());
   let result = [...inputValue];
-  for (let x = 0; x < digit; x++) {
+  for (let x = 1; x < digit + 1; x++) {
     result.forEach((number) => {
-      zeroToNine[number % 10 ** x].inqueue(number);
+      const string = String(number).split('');
+      let index = string.length >= x ? string[string.length - x] : 0;
+      zeroToNine[index].inqueue(number);
     });
+
     result = [];
     zeroToNine.forEach((q) => {
       while (!q.isEmpty()) {
