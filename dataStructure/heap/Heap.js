@@ -5,7 +5,13 @@ class Heap {
   isEmpty() {
     return this.heap.length === 0;
   }
-
+  getSmaller(arr, i, j) {
+    if (arr[i] < arr[j]) {
+      return i;
+    } else {
+      return j;
+    }
+  }
   swap(index1, index2) {
     [this.heap[index1], this.heap[index2]] = [
       this.heap[index2],
@@ -27,11 +33,31 @@ class Heap {
     }
   }
   pop() {
-    const [root, ...newArr] = this.heap;
-    this.heap = [];
-    newArr.forEach((number) => {
-      this.add(number);
-    });
+    const [root] = this.heap;
+    this.heap[0] = this.heap[this.heap.length - 1];
+    this.heap.pop();
+    let currentIndex = 0;
+    let leftIndex = 1;
+    let rightIndex = 2;
+    while (
+      (this.heap[leftIndex] &&
+        this.heap[leftIndex] < this.heap[currentIndex]) ||
+      (this.heap[rightIndex] && this.heap[rightIndex] < this.heap[currentIndex])
+    ) {
+      if (this.heap[leftIndex] && this.heap[rightIndex]) {
+        const smaller = this.getSmaller(this.heap, leftIndex, rightIndex);
+        this.swap(smaller, currentIndex);
+        currentIndex = smaller;
+      } else if (this.heap[leftIndex]) {
+        this.swap(leftIndex, currentIndex);
+        currentIndex = leftIndex;
+      } else {
+        this.swap(rightIndex, currentIndex);
+        currentIndex = rightIndex;
+      }
+      leftIndex = currentIndex * 2;
+      rightIndex = currentIndex * 2 + 1;
+    }
     return root;
   }
 }
