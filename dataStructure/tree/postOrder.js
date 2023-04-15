@@ -1,4 +1,4 @@
-const BinaryTree = require('./BinaryTree');
+const BinaryTree = require('./BST/BinarySearchTree');
 
 const postOrder = (inputArray) => {
   const tree = new BinaryTree();

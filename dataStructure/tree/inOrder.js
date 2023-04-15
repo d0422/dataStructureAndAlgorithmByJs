@@ -1,4 +1,4 @@
-const BinaryTree = require('./BinaryTree');
+const BinaryTree = require('./BST/BinarySearchTree');
 const inOrder = (inputArray) => {
   const binaryTree = new BinaryTree();
   inputArray.forEach((number) => {

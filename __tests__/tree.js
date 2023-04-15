@@ -1,4 +1,4 @@
-const BinaryTree = require('../dataStructure/tree/BinaryTree');
+const BinarySearchTree = require('../dataStructure/tree/BST/BinarySearchTree');
 const inOrder = require('../dataStructure/tree/inOrder');
 const postOrder = require('../dataStructure/tree/postOrder');
 const preOrder = require('../dataStructure/tree/preOrder');
@@ -34,7 +34,7 @@ test('트리 삭제 테스트,  루트인경우', () => {
   const inputArray = [7, 5, 10, 2, 1, 3];
   const output = [[1], [2], [3], [5], [10]];
   const consoleSpy = jest.spyOn(console, 'log');
-  const tree = new BinaryTree();
+  const tree = new BinarySearchTree();
   inputArray.forEach((number) => {
     tree.add(number);
   });
@@ -48,7 +48,7 @@ test('트리 삭제 테스트, 자식노드가 둘인 경우', () => {
   const inputArray = [7, 5, 10, 2, 1, 3];
   const output = [[1], [2], [3], [7], [10]];
   const consoleSpy = jest.spyOn(console, 'log');
-  const tree = new BinaryTree();
+  const tree = new BinarySearchTree();
   inputArray.forEach((number) => {
     tree.add(number);
   });
@@ -75,7 +75,7 @@ test('트리 삭제 테스트, 자식노드가 왼쪽 하나인 경우', () => {
   ];
 
   const consoleSpy = jest.spyOn(console, 'log');
-  const tree = new BinaryTree();
+  const tree = new BinarySearchTree();
   inputArray.forEach((number) => {
     tree.add(number);
   });
@@ -89,7 +89,7 @@ test('트리 삭제 테스트, 자식노드가 오른쪽 하나인 경우', () =
   const inputArray = [12, 8, 7, 1, 10, 9, 11, 23, 14, 13, 15, 25];
   const output = [[1], [7], [8], [9], [10], [11], [12], [13], [14], [15], [25]];
   const consoleSpy = jest.spyOn(console, 'log');
-  const tree = new BinaryTree();
+  const tree = new BinarySearchTree();
   inputArray.forEach((number) => {
     tree.add(number);
   });
@@ -103,7 +103,7 @@ test('트리 삭제 테스트, 자식노드가 없는 경우', () => {
   const inputArray = [7, 5, 10, 2, 1, 3];
   const output = [[1], [2], [3], [5], [7]];
   const consoleSpy = jest.spyOn(console, 'log');
-  const tree = new BinaryTree();
+  const tree = new BinarySearchTree();
   inputArray.forEach((number) => {
     tree.add(number);
   });
