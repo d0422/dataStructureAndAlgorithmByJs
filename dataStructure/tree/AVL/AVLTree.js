@@ -8,7 +8,7 @@ class AVLTree {
       this.root = new ABLNode(value);
     } else {
       this.root = this.appendNode(this.root, value);
-      this.root.setBF();
+      this.rebalance(this.root);
     }
   }
   appendNode(root, value) {
@@ -22,8 +22,43 @@ class AVLTree {
         root.left = this.appendNode(root.left, value);
       }
     }
-    root.setBF();
+    root = this.rebalance(root);
     return root;
+  }
+
+  rightRotate(node) {
+    const root = node.left;
+    const rightNodes = root.right;
+
+    root.right = node;
+    node.left = rightNodes;
+    return root;
+  }
+  leftRotate(node) {
+    const root = node.right;
+    const leftNodes = root.left;
+    root.left = node;
+    node.right = leftNodes;
+    return root;
+  }
+  rebalance(node) {
+    if (node.BF > 1 && node.left) {
+      if (node.left.left) {
+        node = this.rightRotate(node);
+      } else {
+        node.left = this.leftRotate(node.left);
+        node = this.rightRotate(node);
+      }
+    }
+    if (node.BF < -1 && node.right) {
+      if (node.right.right) {
+        node = this.leftRotate(node);
+      } else {
+        node.right = this.rightRotate(node.right);
+        node = this.leftRotate(node);
+      }
+    }
+    return node;
   }
 }
 
