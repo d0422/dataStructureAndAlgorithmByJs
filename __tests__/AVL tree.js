@@ -4,7 +4,7 @@ test('AVL 트리 BF테스트 1', () => {
   [1, 2, 3, 4, 5].forEach((num) => {
     avl.add(num);
   });
-  expect([avl.root.BF, avl.root.right.BF]).toEqual([-4, -3]);
+  expect([avl.root.BF, avl.root.right.BF]).toEqual([-1, 0]);
 });
 
 test('AVL 트리 BF테스트 ', () => {
@@ -31,6 +31,6 @@ test('AVL 트리 BF테스트 ', () => {
     avl.add(num);
   });
   expect([avl.root.BF, avl.root.left.BF, avl.root.left.left.BF]).toEqual([
-    4, 3, 2,
+    1, 0, 0,
   ]);
 });
