@@ -17,11 +17,9 @@ class AVLTree {
     } else {
       if (value > root.value) {
         root.right = this.appendNode(root.right, value);
-        root.right.setBF();
       }
       if (value < root.value) {
         root.left = this.appendNode(root.left, value);
-        root.left.setBF();
       }
     }
     root.setBF();
