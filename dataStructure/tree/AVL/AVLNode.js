@@ -3,15 +3,14 @@ const BinaryNode = require('../BST/BinaryNode');
 class AVLNode extends BinaryNode {
   constructor(value) {
     super(value);
-    this.BF = 0;
   }
-  setBF() {
+  get BF() {
     if (!this.left && !this.right) {
-      this.BF = 0;
+      return 0;
     } else {
       const left = this.getHeight(this.left);
       const right = this.getHeight(this.right);
-      this.BF = left - right;
+      return left - right;
     }
   }
   getHeight(node) {
