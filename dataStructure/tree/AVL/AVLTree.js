@@ -30,9 +30,3 @@ class AVLTree {
 }
 
 module.exports = AVLTree;
-const tree = new AVLTree();
-[2, 1, 4, 3, 5].forEach((num) => {
-  tree.add(num);
-});
-console.log(tree.root);
-console.log(tree.root.right);

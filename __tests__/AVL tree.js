@@ -24,3 +24,12 @@ test('AVL 트리 BF테스트 ', () => {
     -1, 0, 0,
   ]);
 });
+test('AVL 트리 BF테스트 ', () => {
+  const avl = new AVLTree();
+  [10, 9, 8, 7, 6].forEach((num) => {
+    avl.add(num);
+  });
+  expect([avl.root.BF, avl.root.left.BF, avl.root.left.left.BF]).toEqual([
+    4, 3, 2,
+  ]);
+});
