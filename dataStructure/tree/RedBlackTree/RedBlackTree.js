@@ -44,7 +44,7 @@ class RedBlackTree {
     if (!grand) return;
 
     const uncle = grand.left === parent ? grand.right : grand.left;
-    if (parent.color === 'red') {
+    if (node.color === 'red' && parent.color === 'red') {
       if (!uncle || uncle.color === 'black') {
         this.restructuring(grand, parent, node);
       } else {
